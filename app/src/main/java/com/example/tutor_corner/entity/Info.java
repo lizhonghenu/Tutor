@@ -7,14 +7,14 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class Info extends BmobObject {
-    private String infoId;
+    private Integer infoId;
     private boolean type;//true表示别人发布的家教信息，false表示求家教信息。
-    private String issueUserId;
-    private String subjectId;
+    private Integer issueUserId;
+    private Integer subjectId;
     private String issueDate;
     private String remark;//备注
 
-    public Info(String tableName, boolean type, String issueUserId, String subjectId, String issueDate, String remark) {
+    public Info(String tableName, boolean type, Integer issueUserId, Integer subjectId, String issueDate, String remark) {
         super(tableName);
         this.type = type;
         this.issueUserId = issueUserId;
@@ -23,48 +23,48 @@ public class Info extends BmobObject {
         this.remark = remark;
     }
 
-    public String getInfoId() {
+    public Integer getInfoId() {
         return infoId;
+    }
+
+    public void setInfoId(Integer infoId) {
+        this.infoId = infoId;
     }
 
     public boolean isType() {
         return type;
     }
 
-    public String getIssueUserId() {
+    public void setType(boolean type) {
+        this.type = type;
+    }
+
+    public Integer getIssueUserId() {
         return issueUserId;
     }
 
-    public String getSubjectId() {
+    public void setIssueUserId(Integer issueUserId) {
+        this.issueUserId = issueUserId;
+    }
+
+    public Integer getSubjectId() {
         return subjectId;
+    }
+
+    public void setSubjectId(Integer subjectId) {
+        this.subjectId = subjectId;
     }
 
     public String getIssueDate() {
         return issueDate;
     }
 
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setInfoId(String infoId) {
-        this.infoId = infoId;
-    }
-
-    public void setType(boolean type) {
-        this.type = type;
-    }
-
-    public void setIssueUserId(String issueUserId) {
-        this.issueUserId = issueUserId;
-    }
-
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId;
-    }
-
     public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
+    }
+
+    public String getRemark() {
+        return remark;
     }
 
     public void setRemark(String remark) {

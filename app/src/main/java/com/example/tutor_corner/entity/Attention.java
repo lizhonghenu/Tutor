@@ -7,29 +7,37 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class Attention extends BmobObject{
-    private String attentionId;
-    private String userId;
-    private String attentionedUserId;
+    private Integer attentionId;
+    private Integer userId;
+    private Integer attentionedUserId;
 
-    public Attention(String tableName, String userId, String attentionedUserId) {
+    public Attention(String tableName, Integer userId, Integer attentionedUserId) {
         super(tableName);
         this.userId = userId;
         this.attentionedUserId = attentionedUserId;
     }
 
-    public String getUserId() {
+    public Integer getAttentionId() {
+        return attentionId;
+    }
+
+    public void setAttentionId(Integer attentionId) {
+        this.attentionId = attentionId;
+    }
+
+    public Integer getUserId() {
         return userId;
     }
 
-    public String getAttentionedUserId() {
-        return attentionedUserId;
-    }
-
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public void setAttentionedUserId(String attentionedUserId) {
+    public Integer getAttentionedUserId() {
+        return attentionedUserId;
+    }
+
+    public void setAttentionedUserId(Integer attentionedUserId) {
         this.attentionedUserId = attentionedUserId;
     }
 }

@@ -7,7 +7,7 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class Subject extends BmobObject {
-    private String subjectId;
+    private Integer subjectId;
     private String grade;
     private String subjectName;
     private String startDate;
@@ -23,7 +23,7 @@ public class Subject extends BmobObject {
         this.time = time;
     }
 
-    public String getSubjectId() {
+    public Integer getSubjectId() {
         return subjectId;
     }
 
@@ -47,7 +47,7 @@ public class Subject extends BmobObject {
         return time;
     }
 
-    public void setSubjectId(String subjectId) {
+    public void setSubjectId(Integer subjectId) {
         this.subjectId = subjectId;
     }
 

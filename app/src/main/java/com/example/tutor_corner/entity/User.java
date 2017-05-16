@@ -1,5 +1,7 @@
 package com.example.tutor_corner.entity;
 
+import java.io.File;
+
 import cn.bmob.v3.BmobObject;
 
 /**
@@ -7,7 +9,7 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class User  extends BmobObject {
-    private String userId;
+    private Integer userId;
     private String name;
     private String gender;
     private String birthYearMonth;
@@ -16,11 +18,11 @@ public class User  extends BmobObject {
     private String city;
     private String street;
     private String registDate;
-    private String pic;//图片如何存放
+    private File pic;//图片如何存放
     private String email;
     private boolean isLogin;//是否登录
 
-    public User(String tableName, String name, String gender, String birthYearMonth, String phone, String education, String city, String street, String registDate, String pic, String email, boolean isLogin) {
+    public User(String tableName, String name, String gender, String birthYearMonth, String phone, String education, String city, String street, String registDate, File pic, String email, boolean isLogin) {
         super(tableName);
         this.name = name;
         this.gender = gender;
@@ -35,7 +37,7 @@ public class User  extends BmobObject {
         this.isLogin = isLogin;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -71,7 +73,7 @@ public class User  extends BmobObject {
         this.registDate = registDate;
     }
 
-    public void setPic(String pic) {
+    public void setPic(File pic) {
         this.pic = pic;
     }
 
@@ -83,7 +85,7 @@ public class User  extends BmobObject {
         isLogin = login;
     }
 
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
@@ -119,7 +121,7 @@ public class User  extends BmobObject {
         return registDate;
     }
 
-    public String getPic() {
+    public File getPic() {
         return pic;
     }
 
