@@ -7,7 +7,6 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class attention extends BmobObject{
-    private Integer attentionId;
     private user userId;
     private Integer attentionedUserId;
     public attention(){
@@ -19,13 +18,13 @@ public class attention extends BmobObject{
         this.attentionedUserId = attentionedUserId;
     }
 
-    public Integer getAttentionId() {
-        return attentionId;
-    }
-
-    public void setAttentionId(Integer attentionId) {
-        this.attentionId = attentionId;
-    }
+//    public Integer getAttentionId() {
+//        return attentionId;
+//    }
+//
+//    public void setAttentionId(Integer attentionId) {
+//        this.attentionId = attentionId;
+//    }
 
     public user getUserId() {
         return userId;

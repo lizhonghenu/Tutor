@@ -5,27 +5,25 @@ package com.example.tutor_corner.entity;
  */
 
 public class file {
-    private Integer fileId;
     private file studyFile;
     private subject subjectId;
     private user userId;
     public file(){
 
     }
-    public file(Integer fileId, file studyFile, subject subjectId, user userId){
-        this.fileId = fileId;
+    public file(file studyFile, subject subjectId, user userId){
         this.studyFile = studyFile;
         this.subjectId = subjectId;
         this.userId = userId;
     }
 
-    public Integer getFileId() {
-        return fileId;
-    }
-
-    public void setFileId(Integer fileId) {
-        this.fileId = fileId;
-    }
+//    public Integer getFileId() {
+//        return fileId;
+//    }
+//
+//    public void setFileId(Integer fileId) {
+//        this.fileId = fileId;
+//    }
 
     public file getStudyFile() {
         return studyFile;

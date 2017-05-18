@@ -7,7 +7,6 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class comment extends BmobObject {
-    private Integer commentId;
     private user userId;
     private info infoId;
     private subject subjectId;
@@ -38,13 +37,13 @@ public class comment extends BmobObject {
         this.subjectId = subjectId;
     }
 
-    public Integer getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(Integer commentId) {
-        this.commentId = commentId;
-    }
+//    public Integer getCommentId() {
+//        return commentId;
+//    }
+//
+//    public void setCommentId(Integer commentId) {
+//        this.commentId = commentId;
+//    }
 
     public user getUserId() {
         return userId;

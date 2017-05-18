@@ -40,11 +40,11 @@
                 android:layout_height="wrap_content"
                 android:text="2017-05-16 16：20"/>
             <TextView
-
+                android:textAlignment="gravity"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/text_comment_issuer"
                 android:layout_marginLeft="100dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="张三"/>
 

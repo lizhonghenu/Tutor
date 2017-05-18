@@ -7,7 +7,6 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class message extends BmobObject{
-    private Integer messageId;
     private Integer issueUserId;
     private Integer receiveUserId;
     private String content;
@@ -15,21 +14,20 @@ public class message extends BmobObject{
     public message(){
 
     }
-    public message(Integer messageId, Integer issueUserId, Integer receiveUserId, String content, String issueDate) {
-        this.messageId = messageId;
+    public message(Integer issueUserId, Integer receiveUserId, String content, String issueDate) {
         this.issueUserId = issueUserId;
         this.receiveUserId = receiveUserId;
         this.content = content;
         this.issueDate = issueDate;
     }
 
-    public Integer getMessageId() {
-        return messageId;
-    }
-
-    public void setMessageId(Integer messageId) {
-        this.messageId = messageId;
-    }
+//    public Integer getMessageId() {
+//        return messageId;
+//    }
+//
+//    public void setMessageId(Integer messageId) {
+//        this.messageId = messageId;
+//    }
 
     public Integer getIssueUserId() {
         return issueUserId;
