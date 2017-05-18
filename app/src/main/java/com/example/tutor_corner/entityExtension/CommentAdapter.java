@@ -1,6 +1,8 @@
 package com.example.tutor_corner.entityExtension;
 
-import android.support.v4.app.INotificationSideChannel;
+import com.example.tutor_corner.entity.info;
+import com.example.tutor_corner.entity.subject;
+import com.example.tutor_corner.entity.user;
 
 import cn.bmob.v3.BmobObject;
 
@@ -10,29 +12,35 @@ import cn.bmob.v3.BmobObject;
 
 public class CommentAdapter extends BmobObject {
 //    comment 已学课程评论
-    private Integer commentUserId;
-    private Integer commentedUserId;
-    private Integer infoId;
+    private user userId;
+    //private Integer commentedUserId;
+    private info infoId;
     private String content;
     private Integer attitudeScore;
     private Integer methodScore;
     private Integer abilityScore;
     private String commentIssueDate;
+//    user用户信息
+    private String commentUserName;
 //    info 家教信息
-    private Integer subjectId;
+    private subject subjectId;
     private String infoIssueDate;
 //    subject课程信息
     private String grade;
     private String subjectName;
     private String startDate;
     private String endDate;
-    public CommentAdapter(Integer commentUserId,Integer commentedUserId,Integer infoId,String content,Integer attitudeScore
-    ,Integer methodScore,Integer abilityScore,String commentIssueDate,Integer subjectId,String infoIssueDate,String grade
-    ,String subjectName,String startDate,String endDate){
+    public CommentAdapter(){
+
+    }
+    public CommentAdapter(String commentUserName,user userId,info infoId,String content,Integer attitudeScore
+            ,Integer methodScore,Integer abilityScore,String commentIssueDate,subject subjectId,String infoIssueDate,String grade
+            ,String subjectName,String startDate,String endDate){
+        this.commentUserName = commentUserName;
         this.abilityScore = abilityScore;
         this.attitudeScore = attitudeScore;
-        this.commentedUserId = commentedUserId;
-        this.commentUserId = commentUserId;
+        //this.commentedUserId = commentedUserId;
+        this.userId = userId;
         this.infoId = infoId;
         this.content = content;
         this.methodScore = methodScore;
@@ -45,27 +53,27 @@ public class CommentAdapter extends BmobObject {
         this.startDate = startDate;
     }
 
-    public Integer getCommentUserId() {
-        return commentUserId;
+    public String getCommentUserName() {
+        return commentUserName;
     }
 
-    public void setCommentUserId(Integer commentUserId) {
-        this.commentUserId = commentUserId;
+    public void setCommentUserName(String commentUserName) {
+        this.commentUserName = commentUserName;
     }
 
-    public Integer getCommentedUserId() {
-        return commentedUserId;
+    public user getUserId() {
+        return userId;
     }
 
-    public void setCommentedUserId(Integer commentedUserId) {
-        this.commentedUserId = commentedUserId;
+    public void setUserId(user commentUserId) {
+        this.userId = commentUserId;
     }
 
-    public Integer getInfoId() {
+    public info getInfoId() {
         return infoId;
     }
 
-    public void setInfoId(Integer infoId) {
+    public void setInfoId(info infoId) {
         this.infoId = infoId;
     }
 
@@ -109,11 +117,11 @@ public class CommentAdapter extends BmobObject {
         this.commentIssueDate = commentIssueDate;
     }
 
-    public Integer getSubjectId() {
+    public subject getSubjectId() {
         return subjectId;
     }
 
-    public void setSubjectId(Integer subjectId) {
+    public void setSubjectId(subject subjectId) {
         this.subjectId = subjectId;
     }
 

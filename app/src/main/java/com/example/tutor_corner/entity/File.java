@@ -4,12 +4,15 @@ package com.example.tutor_corner.entity;
  * Created by 李钟 on 2017/5/16.
  */
 
-public class File {
+public class file {
     private Integer fileId;
-    private File studyFile;
-    private Integer subjectId;
-    private Integer userId;
-    public File(Integer fileId,File studyFile,Integer subjectId,Integer userId){
+    private file studyFile;
+    private subject subjectId;
+    private user userId;
+    public file(){
+
+    }
+    public file(Integer fileId, file studyFile, subject subjectId, user userId){
         this.fileId = fileId;
         this.studyFile = studyFile;
         this.subjectId = subjectId;
@@ -24,27 +27,27 @@ public class File {
         this.fileId = fileId;
     }
 
-    public File getStudyFile() {
+    public file getStudyFile() {
         return studyFile;
     }
 
-    public void setStudyFile(File studyFile) {
+    public void setStudyFile(file studyFile) {
         this.studyFile = studyFile;
     }
 
-    public Integer getSubjectId() {
+    public subject getSubjectId() {
         return subjectId;
     }
 
-    public void setSubjectId(Integer subjectId) {
+    public void setSubjectId(subject subjectId) {
         this.subjectId = subjectId;
     }
 
-    public Integer getUserId() {
+    public user getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(user userId) {
         this.userId = userId;
     }
 }

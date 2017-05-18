@@ -6,14 +6,16 @@ import cn.bmob.v3.BmobObject;
  * Created by 青 on 2017/5/15.
  */
 
-public class Message extends BmobObject{
+public class message extends BmobObject{
     private Integer messageId;
     private Integer issueUserId;
     private Integer receiveUserId;
     private String content;
     private String issueDate;
+    public message(){
 
-    public Message(Integer messageId, Integer issueUserId, Integer receiveUserId, String content, String issueDate) {
+    }
+    public message(Integer messageId, Integer issueUserId, Integer receiveUserId, String content, String issueDate) {
         this.messageId = messageId;
         this.issueUserId = issueUserId;
         this.receiveUserId = receiveUserId;

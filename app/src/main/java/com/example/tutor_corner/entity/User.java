@@ -8,113 +8,83 @@ import cn.bmob.v3.BmobObject;
  * Created by 青 on 2017/5/15.
  */
 
-public class User  extends BmobObject {
-    private Integer userId;
-    private String name;
-    private String gender;
-    private String birthYearMonth;
-    private String phone;
+public class user  extends BmobObject {
+    private user userId;
+    private String username;
+    private String password;
+    private String sex;
+    private String birthday;
+    private String mobilephoneNumber;
     private String education;
-    private String city;
-    private String street;
+    private String area;
+    private Integer age;
+    private String school;
+    private String profession;//职业
     private String registDate;
     private File pic;//图片如何存放
     private String email;
-    private boolean isLogin;//是否登录
+    private boolean isLog;//是否登录
 
-    public User(String tableName, String name, String gender, String birthYearMonth, String phone, String education, String city, String street, String registDate, File pic, String email, boolean isLogin) {
+    public user(String tableName, String username, String password, String sex, String birthday, String mobilephoneNumber, String education, String area, Integer age, String school, String profession, String registDate, File pic, String email, boolean isLog) {
         super(tableName);
-        this.name = name;
-        this.gender = gender;
-        this.birthYearMonth = birthYearMonth;
-        this.phone = phone;
+        this.username = username;
+        this.password = password;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.mobilephoneNumber = mobilephoneNumber;
         this.education = education;
-        this.city = city;
-        this.street = street;
+        this.area = area;
+        this.age = age;
+        this.school = school;
+        this.profession = profession;
         this.registDate = registDate;
         this.pic = pic;
         this.email = email;
-        this.isLogin = isLogin;
+        this.isLog = isLog;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setBirthYearMonth(String birthYearMonth) {
-        this.birthYearMonth = birthYearMonth;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setEducation(String education) {
-        this.education = education;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setRegistDate(String registDate) {
-        this.registDate = registDate;
-    }
-
-    public void setPic(File pic) {
-        this.pic = pic;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setLogin(boolean login) {
-        isLogin = login;
-    }
-
-    public Integer getUserId() {
+    public user getUserId() {
         return userId;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public String getGender() {
-        return gender;
+    public String getPassword() {
+        return password;
     }
 
-    public String getBirthYearMonth() {
-        return birthYearMonth;
+    public String getSex() {
+        return sex;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public String getMobilephoneNumber() {
+        return mobilephoneNumber;
     }
 
     public String getEducation() {
         return education;
     }
 
-    public String getCity() {
-        return city;
+    public String getArea() {
+        return area;
     }
 
-    public String getStreet() {
-        return street;
+    public Integer getAge() {
+        return age;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public String getProfession() {
+        return profession;
     }
 
     public String getRegistDate() {
@@ -129,7 +99,67 @@ public class User  extends BmobObject {
         return email;
     }
 
-    public boolean isLogin() {
-        return isLogin;
+    public boolean isLog() {
+        return isLog;
+    }
+
+    public void setUserId(user userId) {
+        this.userId = userId;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public void setMobilephoneNumber(String mobilephoneNumber) {
+        this.mobilephoneNumber = mobilephoneNumber;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public void setRegistDate(String registDate) {
+        this.registDate = registDate;
+    }
+
+    public void setPic(File pic) {
+        this.pic = pic;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setLog(boolean log) {
+        isLog = log;
     }
 }

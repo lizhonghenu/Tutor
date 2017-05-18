@@ -6,15 +6,17 @@ import cn.bmob.v3.BmobObject;
  * Created by 青 on 2017/5/15.
  */
 
-public class Subject extends BmobObject {
+public class subject extends BmobObject {
     private Integer subjectId;
     private String grade;
     private String subjectName;
     private String startDate;
     private String endDate;
     private String time;
+    public subject(){
 
-    public Subject(String tableName, String grade, String subjectName, String startDate, String endDate, String time) {
+    }
+    public subject(String tableName, String grade, String subjectName, String startDate, String endDate, String time) {
         super(tableName);
         this.grade = grade;
         this.subjectName = subjectName;

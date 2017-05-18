@@ -6,26 +6,36 @@ import cn.bmob.v3.BmobObject;
  * Created by 青 on 2017/5/15.
  */
 
-public class Comment extends BmobObject {
+public class comment extends BmobObject {
     private Integer commentId;
-    private Integer commentUserId;
-    private Integer commentedUserId;
-    private Integer infoId;
+    private user userId;
+    private info infoId;
+    private subject subjectId;
     private String content;
     private Integer attitudeScore;//满分是10分
     private Integer methodScore;
     private Integer abilityScore;
     private String issueDate;
+    public comment(){
 
-    public Comment(Integer commentUserId, Integer commentedUserId, Integer infoId, String content, Integer attitudeScore, Integer methodScore, Integer abilityScore, String issueDate) {
-        this.commentUserId = commentUserId;
-        this.commentedUserId = commentedUserId;
+    }
+    public comment(user userId, info infoId, String content, Integer attitudeScore, Integer methodScore, Integer abilityScore, String issueDate,subject subjectId) {
+        this.userId = userId;
         this.infoId = infoId;
         this.content = content;
         this.attitudeScore = attitudeScore;
         this.methodScore = methodScore;
         this.abilityScore = abilityScore;
         this.issueDate = issueDate;
+        this.subjectId = subjectId;
+    }
+
+    public subject getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(subject subjectId) {
+        this.subjectId = subjectId;
     }
 
     public Integer getCommentId() {
@@ -36,27 +46,19 @@ public class Comment extends BmobObject {
         this.commentId = commentId;
     }
 
-    public Integer getCommentUserId() {
-        return commentUserId;
+    public user getUserId() {
+        return userId;
     }
 
-    public void setCommentUserId(Integer commentUserId) {
-        this.commentUserId = commentUserId;
+    public void setUserId(user userId) {
+        this.userId = userId;
     }
 
-    public Integer getCommentedUserId() {
-        return commentedUserId;
-    }
-
-    public void setCommentedUserId(Integer commentedUserId) {
-        this.commentedUserId = commentedUserId;
-    }
-
-    public Integer getInfoId() {
+    public info getInfoId() {
         return infoId;
     }
 
-    public void setInfoId(Integer infoId) {
+    public void setInfoId(info infoId) {
         this.infoId = infoId;
     }
 
@@ -96,7 +98,7 @@ public class Comment extends BmobObject {
         return issueDate;
     }
 
-    public void setIssueDate(String issueDate) {
+    public void setIssueDate(String commentIssueDate) {
         this.issueDate = issueDate;
     }
 }

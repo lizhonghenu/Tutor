@@ -6,28 +6,30 @@ import cn.bmob.v3.BmobObject;
  * Created by 青 on 2017/5/15.
  */
 
-public class Info extends BmobObject {
-    private Integer infoId;
+public class info extends BmobObject {
+    private info infoId;
     private boolean type;//true表示别人发布的家教信息，false表示求家教信息。
-    private Integer issueUserId;
-    private Integer subjectId;
+    private user userId;
+    private subject subjectId;
     private String issueDate;
     private String remark;//备注
+    public info(){
 
-    public Info(String tableName, boolean type, Integer issueUserId, Integer subjectId, String issueDate, String remark) {
+    }
+    public info(String tableName, boolean type, user userId, subject subjectId, String issueDate, String remark) {
         super(tableName);
         this.type = type;
-        this.issueUserId = issueUserId;
+        this.userId = userId;
         this.subjectId = subjectId;
         this.issueDate = issueDate;
         this.remark = remark;
     }
 
-    public Integer getInfoId() {
+    public info getInfoId() {
         return infoId;
     }
 
-    public void setInfoId(Integer infoId) {
+    public void setInfoId(info infoId) {
         this.infoId = infoId;
     }
 
@@ -39,19 +41,19 @@ public class Info extends BmobObject {
         this.type = type;
     }
 
-    public Integer getIssueUserId() {
-        return issueUserId;
+    public user getUserId() {
+        return userId;
     }
 
-    public void setIssueUserId(Integer issueUserId) {
-        this.issueUserId = issueUserId;
+    public void setUserId(Integer issueUserId) {
+        this.userId = userId;
     }
 
-    public Integer getSubjectId() {
+    public subject getSubjectId() {
         return subjectId;
     }
 
-    public void setSubjectId(Integer subjectId) {
+    public void setSubjectId(subject subjectId) {
         this.subjectId = subjectId;
     }
 
