@@ -1,8 +1,10 @@
 package com.example.tutor_corner.entityExtension;
 
+import com.example.tutor_corner.entity.User;
 import com.example.tutor_corner.entity.info;
 import com.example.tutor_corner.entity.subject;
-import com.example.tutor_corner.entity.user;
+
+import java.io.File;
 
 import cn.bmob.v3.BmobObject;
 
@@ -12,8 +14,8 @@ import cn.bmob.v3.BmobObject;
 
 public class CommentAdapter extends BmobObject {
 //    comment 已学课程评论
-    private user userId;
-    //private Integer commentedUserId;
+    private User userId,commentedUserId;
+    private String cmmentedUserName;
     private info infoId;
     private String content;
     private Integer attitudeScore;
@@ -22,6 +24,15 @@ public class CommentAdapter extends BmobObject {
     private String commentIssueDate;
 //    user用户信息
     private String commentUserName;
+    private String sex;
+    private String mobilephoneNumber;
+    private String education;
+    private String area;
+    private Integer age;
+    private String school;
+    private String profession;//职业
+    private String email;
+
 //    info 家教信息
     private subject subjectId;
     private String infoIssueDate;
@@ -30,15 +41,17 @@ public class CommentAdapter extends BmobObject {
     private String subjectName;
     private String startDate;
     private String endDate;
+    private String imageUrl;
     public CommentAdapter(){
 
     }
-    public CommentAdapter(String commentUserName,user userId,info infoId,String content,Integer attitudeScore
+    public CommentAdapter(String imageUrl,String commentUserName,User userId,info infoId,String content,Integer attitudeScore
             ,Integer methodScore,Integer abilityScore,String commentIssueDate,subject subjectId,String infoIssueDate,String grade
             ,String subjectName,String startDate,String endDate){
         this.commentUserName = commentUserName;
         this.abilityScore = abilityScore;
         this.attitudeScore = attitudeScore;
+        this.imageUrl = imageUrl;
         //this.commentedUserId = commentedUserId;
         this.userId = userId;
         this.infoId = infoId;
@@ -53,6 +66,102 @@ public class CommentAdapter extends BmobObject {
         this.startDate = startDate;
     }
 
+    public User getCommentedUserId() {
+        return commentedUserId;
+    }
+
+    public void setCommentedUserId(User commentedUserId) {
+        this.commentedUserId = commentedUserId;
+    }
+
+    public String getCmmentedUserName() {
+        return cmmentedUserName;
+    }
+
+    public void setCmmentedUserName(String cmmentedUserName) {
+        this.cmmentedUserName = cmmentedUserName;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getMobilephoneNumber() {
+        return mobilephoneNumber;
+    }
+
+    public void setMobilephoneNumber(String mobilephoneNumber) {
+        this.mobilephoneNumber = mobilephoneNumber;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+//    public File getPic() {
+//        return pic;
+//    }
+//
+//    public void setPic(File pic) {
+//        this.pic = pic;
+//    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getCommentUserName() {
         return commentUserName;
     }
@@ -61,11 +170,11 @@ public class CommentAdapter extends BmobObject {
         this.commentUserName = commentUserName;
     }
 
-    public user getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(user commentUserId) {
+    public void setUserId(User commentUserId) {
         this.userId = commentUserId;
     }
 

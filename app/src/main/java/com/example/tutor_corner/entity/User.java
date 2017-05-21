@@ -2,164 +2,111 @@ package com.example.tutor_corner.entity;
 
 import java.io.File;
 
+import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.datatype.BmobFile;
 
 /**
- * Created by 青 on 2017/5/15.
+ * Created by sujing on 2017/5/16.
  */
 
-public class user  extends BmobObject {
-    private user userId;
-    private String username;
-    private String password;
+public class User extends BmobUser{
+
     private String sex;
-    private String birthday;
-    private String mobilephoneNumber;
-    private String education;
-    private String area;
     private Integer age;
+    private Boolean isLogin;
+    private String introduction;
+    private String birthday;
+    private String education;
     private String school;
-    private String profession;//职业
-    private String registDate;
-    private File pic;//图片如何存放
-    private String email;
-    private boolean isLog;//是否登录
+    private String area;
+    private String profession;
+    private BmobFile picture;
+    public User(){
 
-    public user(String tableName, String username, String password, String sex, String birthday, String mobilephoneNumber, String education, String area, Integer age, String school, String profession, String registDate, File pic, String email, boolean isLog) {
-        super(tableName);
-        this.username = username;
-        this.password = password;
-        this.sex = sex;
-        this.birthday = birthday;
-        this.mobilephoneNumber = mobilephoneNumber;
-        this.education = education;
-        this.area = area;
-        this.age = age;
-        this.school = school;
-        this.profession = profession;
-        this.registDate = registDate;
-        this.pic = pic;
-        this.email = email;
-        this.isLog = isLog;
     }
 
-    public user getUserId() {
-        return userId;
+    public BmobFile getPicture() {
+        return picture;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
+    public void setPicture(BmobFile picture) {
+        this.picture = picture;
     }
 
     public String getSex() {
         return sex;
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public String getMobilephoneNumber() {
-        return mobilephoneNumber;
-    }
-
-    public String getEducation() {
-        return education;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public String getSchool() {
-        return school;
-    }
-
-    public String getProfession() {
-        return profession;
-    }
-
-    public String getRegistDate() {
-        return registDate;
-    }
-
-    public File getPic() {
-        return pic;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public boolean isLog() {
-        return isLog;
-    }
-
-    public void setUserId(user userId) {
-        this.userId = userId;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public String getBirthday() {
+        return birthday;
     }
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
-    public void setMobilephoneNumber(String mobilephoneNumber) {
-        this.mobilephoneNumber = mobilephoneNumber;
+    public String getEducation() {
+        return education;
     }
 
     public void setEducation(String education) {
         this.education = education;
     }
 
-    public void setArea(String area) {
-        this.area = area;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+    public String getSchool() {
+        return school;
     }
 
     public void setSchool(String school) {
         this.school = school;
     }
 
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
     public void setProfession(String profession) {
         this.profession = profession;
     }
 
-    public void setRegistDate(String registDate) {
-        this.registDate = registDate;
+
+
+
+    public Integer getAge() {
+        return age;
     }
 
-    public void setPic(File pic) {
-        this.pic = pic;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Boolean getLogin() {
+        return isLogin;
     }
 
-    public void setLog(boolean log) {
-        isLog = log;
+    public void setLogin(Boolean login) {
+        isLogin = login;
     }
 }

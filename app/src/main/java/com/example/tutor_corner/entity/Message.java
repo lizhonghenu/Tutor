@@ -21,13 +21,6 @@ public class message extends BmobObject{
         this.issueDate = issueDate;
     }
 
-//    public Integer getMessageId() {
-//        return messageId;
-//    }
-//
-//    public void setMessageId(Integer messageId) {
-//        this.messageId = messageId;
-//    }
 
     public Integer getIssueUserId() {
         return issueUserId;

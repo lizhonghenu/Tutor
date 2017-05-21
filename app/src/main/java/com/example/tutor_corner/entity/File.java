@@ -7,11 +7,11 @@ package com.example.tutor_corner.entity;
 public class file {
     private file studyFile;
     private subject subjectId;
-    private user userId;
+    private User userId;
     public file(){
 
     }
-    public file(file studyFile, subject subjectId, user userId){
+    public file(file studyFile, subject subjectId, User userId){
         this.studyFile = studyFile;
         this.subjectId = subjectId;
         this.userId = userId;
@@ -41,11 +41,11 @@ public class file {
         this.subjectId = subjectId;
     }
 
-    public user getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(user userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 }

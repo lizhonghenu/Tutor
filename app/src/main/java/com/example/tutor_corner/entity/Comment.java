@@ -7,7 +7,7 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class comment extends BmobObject {
-    private user userId;
+    private User userId,commentedUserId;
     private info infoId;
     private subject subjectId;
     private String content;
@@ -18,8 +18,9 @@ public class comment extends BmobObject {
     public comment(){
 
     }
-    public comment(user userId, info infoId, String content, Integer attitudeScore, Integer methodScore, Integer abilityScore, String issueDate,subject subjectId) {
+    public comment(User commentedUserId,User userId, info infoId, String content, Integer attitudeScore, Integer methodScore, Integer abilityScore, String issueDate,subject subjectId) {
         this.userId = userId;
+        this.commentedUserId = commentedUserId;
         this.infoId = infoId;
         this.content = content;
         this.attitudeScore = attitudeScore;
@@ -37,19 +38,19 @@ public class comment extends BmobObject {
         this.subjectId = subjectId;
     }
 
-//    public Integer getCommentId() {
-//        return commentId;
-//    }
-//
-//    public void setCommentId(Integer commentId) {
-//        this.commentId = commentId;
-//    }
+    public User getCommentedUserId() {
+        return commentedUserId;
+    }
 
-    public user getUserId() {
+    public void setCommentedUserId(User commentedUserId) {
+        this.commentedUserId = commentedUserId;
+    }
+
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(user userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

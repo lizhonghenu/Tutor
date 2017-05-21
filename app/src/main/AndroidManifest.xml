@@ -15,24 +15,26 @@
     <!-- 允许读取手机状态 用于创建BmobInstallation -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-
     <application
+        android:name=".base.MyApplecation"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Main_comment_Activity">
 
         </activity>
-        <activity android:name=".Main_comment_Activity" >
+        <activity android:name=".Main_comment_detail_Activity" ></activity>
+        <activity android:name=".Main_admincomment_Activity"></activity>
+        <activity android:name=".Main_admincomment_detail_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main_comment_detail_Activity"></activity>
     </application>
 
 </manifest>

@@ -7,12 +7,12 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class attention extends BmobObject{
-    private user userId;
+    private User userId;
     private Integer attentionedUserId;
     public attention(){
 
     }
-    public attention(String tableName, user userId, Integer attentionedUserId) {
+    public attention(String tableName, User userId, Integer attentionedUserId) {
         super(tableName);
         this.userId = userId;
         this.attentionedUserId = attentionedUserId;
@@ -26,11 +26,11 @@ public class attention extends BmobObject{
 //        this.attentionId = attentionId;
 //    }
 
-    public user getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(user userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

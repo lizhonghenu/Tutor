@@ -2,45 +2,29 @@ package com.example.tutor_corner.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import com.example.tutor_corner.Main_comment_Activity;
 import com.example.tutor_corner.R;
-
 import com.example.tutor_corner.entity.comment;
-
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.DownloadFileListener;
-import cn.bmob.v3.listener.FindListener;
 
 /**
- * Created by 李钟 on 2017/5/16.
+ * Created by 李钟 on 2017/5/20.
  */
 
-public class Comment_ListView_Adapter extends BaseAdapter{
+public class modifyComment_ListView_Adapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<comment> list = new ArrayList<comment>();
-    public Comment_ListView_Adapter(Context context){
+    public modifyComment_ListView_Adapter(Context context){
         this.context = context;
         inflater =  LayoutInflater.from(context);
     }
@@ -71,23 +55,23 @@ public class Comment_ListView_Adapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final viewHolder holder;
+        final viewHolder1 holder1;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_main_comment_inflater, null);
-            holder = new viewHolder();
-            holder.user = (ImageView) convertView.findViewById(R.id.image_comment_user);
-            holder.content = (TextView) convertView.findViewById(R.id.text_comment_content);
-            holder.issueDate = (TextView) convertView.findViewById(R.id.text_comment_issueDate);
-            holder.issuer = (TextView) convertView.findViewById(R.id.text_comment_issuer);
-            holder.title = (TextView) convertView.findViewById(R.id.text_comment_title);
-            convertView.setTag(holder);
+            holder1 = new viewHolder1();
+            holder1.user = (ImageView) convertView.findViewById(R.id.image_comment_user);
+            holder1.content = (TextView) convertView.findViewById(R.id.text_comment_content);
+            holder1.issueDate = (TextView) convertView.findViewById(R.id.text_comment_issueDate);
+            holder1.issuer = (TextView) convertView.findViewById(R.id.text_comment_issuer);
+            holder1.title = (TextView) convertView.findViewById(R.id.text_comment_title);
+            convertView.setTag(holder1);
 //            图片未加载
         } else {
-            holder = (viewHolder) convertView.getTag();
+            holder1 = (modifyComment_ListView_Adapter.viewHolder1) convertView.getTag();
         }
         comment comment = list.get(position);
         String username = comment.getUserId().getUsername();
-        String imageUrl = comment.getUserId().getPicture().getFileUrl();
+        String imageUrl = comment.getCommentedUserId().getPicture().getFileUrl();
         if (imageUrl != null) {
             DisplayImageOptions options = new DisplayImageOptions.Builder()
                     .showImageOnLoading(R.mipmap.ic_launcher)
@@ -96,15 +80,15 @@ public class Comment_ListView_Adapter extends BaseAdapter{
                     .cacheOnDisk(true)
                     .bitmapConfig(Bitmap.Config.RGB_565)
                     .build();
-            ImageLoader.getInstance().displayImage(imageUrl, holder.user, options);
-            holder.issuer.setText(username);
-            holder.title.setText(comment.getSubjectId().getSubjectName() + " " + comment.getSubjectId().getGrade());
-            holder.content.setText(comment.getContent());
-            holder.issueDate.setText(comment.getIssueDate());
+            ImageLoader.getInstance().displayImage(imageUrl, holder1.user, options);
+            holder1.issuer.setText(username);
+            holder1.title.setText(comment.getSubjectId().getSubjectName() + " " + comment.getSubjectId().getGrade());
+            holder1.content.setText(comment.getContent());
+            holder1.issueDate.setText(comment.getIssueDate());
         }
         return convertView;
     }
-    class viewHolder{
+    class viewHolder1{
         ImageView user = null;
         TextView title = null;
         TextView content = null;

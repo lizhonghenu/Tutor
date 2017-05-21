@@ -7,15 +7,15 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class info extends BmobObject {
-    private Integer type;//true表示别人发布的家教信息，false表示求家教信息。
-    private user userId;
+    private Integer type;
+    private User userId;
     private subject subjectId;
     private String issueDate;
     private String remark;//备注
     public info(){
 
     }
-    public info(String tableName, Integer type, user userId, subject subjectId, String issueDate, String remark) {
+    public info(String tableName, Integer type, User userId, subject subjectId, String issueDate, String remark) {
         super(tableName);
         this.type = type;
         this.userId = userId;
@@ -40,11 +40,11 @@ public class info extends BmobObject {
         this.type = type;
     }
 
-    public user getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer issueUserId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

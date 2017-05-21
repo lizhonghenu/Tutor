@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main_comment_detail_"
+    android:id="@+id/activity_main_admincomment_detail_"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:scrollbars="vertical"
-    tools:context="com.example.tutor_corner.Main_comment_detail_Activity">
+    android:orientation="vertical"
+    tools:context="com.example.tutor_corner.Main_admincomment_detail_Activity">
     <LinearLayout
+        android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
             android:textSize="16dp"
             android:background="#7D9EC0"
-            android:text="评 论 者 信 息"
+            android:text="教 师 信 息"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    <!--评论者图片，信息   -->
+        <!--评论者图片，信息   -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="120dp">
             <!--显示评论者照片   -->
             <ImageView
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:id="@+id/comment_image_user"
+                android:id="@+id/commented_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
             <LinearLayout
@@ -43,13 +43,13 @@
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:text="姓名:"
+                        android:text="教师姓名:"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:id="@+id/comment_commentUserName"
+                        android:id="@+id/commented_username"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
@@ -61,7 +61,7 @@
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:id="@+id/comment_sex"
+                        android:id="@+id/commented_sex"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout><!--姓名，性别   -->
@@ -83,7 +83,7 @@
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:id="@+id/comment_age"
+                        android:id="@+id/commented_age"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
@@ -95,7 +95,7 @@
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:id="@+id/comment_profession"
+                        android:id="@+id/commented_profession"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout><!--年龄，职业   -->
@@ -117,7 +117,7 @@
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:id="@+id/comment_education"
+                        android:id="@+id/commented_education"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                     <TextView
@@ -129,7 +129,7 @@
                     <TextView
                         android:textAlignment="center"
                         android:layout_weight="1"
-                        android:id="@+id/comment_school"
+                        android:id="@+id/commented_school"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout><!--学历，学校   -->
@@ -138,9 +138,7 @@
                     android:layout_height="0.5dp"
                     android:background="#CCCCCC" />
             </LinearLayout>
-            <!--显示评论者信息   -->
-        </LinearLayout>
-        <!--评论者地区，手机，邮箱   -->
+        </LinearLayout><!--显示评论者信息   -->
         <LinearLayout
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
@@ -153,56 +151,139 @@
                 android:text="地区:"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:id="@+id/comment_area"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:text="手机:"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:id="@+id/comment_mobilephoneNumber"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:text="邮箱:"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:id="@+id/comment_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            <TextView
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:id="@+id/commented_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:text="手机:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:id="@+id/commented_mobilephoneNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:text="邮箱:"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:id="@+id/commented_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout><!--评论者地区，手机，邮箱   -->
+        <View
+            android:layout_marginTop="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
         <TextView
             android:textSize="16dp"
             android:background="#7D9EC0"
-            android:text="评 论 得 分"
+            android:text="课 程 详 细 信 息"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    <View
-        android:layout_marginTop="7dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
-    <!--attitude评价图标显示   -->
-    <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textAlignment="center"
+                    android:text="课程名称："
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/comment_subjectName"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textAlignment="center"
+                    android:text="年级："
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/comment_grade"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textAlignment="center"
+                android:text="开始时间："
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/comment_startDate"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textAlignment="center"
+                android:text="结束时间："
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/comment_endDate"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
+        <TextView
+            android:textSize="16dp"
+            android:background="#7D9EC0"
+            android:text="评 价 得 分"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--attitude评价图标显示   -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
             <TextView
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
@@ -240,6 +321,12 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/attitude_score"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
             <ImageView
                 android:layout_weight="1"
                 android:layout_marginTop="2dp"
@@ -247,27 +334,27 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/smill"/>
-    </LinearLayout>
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
-    <!--method评价图标显示   -->
-    <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <TextView
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:text="方法"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
+        <!--method评价图标显示   -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:text="方法"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
             <ImageView
                 android:layout_marginTop="5dp"
                 android:id="@+id/method_star_1"
@@ -298,6 +385,12 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/method_score"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
             <ImageView
                 android:layout_marginTop="2dp"
                 android:id="@+id/method_smill"
@@ -306,27 +399,27 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/smill"/>
 
-    </LinearLayout>
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
-    <!--ability评价图标显示   -->
-    <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <TextView
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:text="态度"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
+        <!--ability评价图标显示   -->
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textAlignment="center"
+                android:text="态度"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
             <ImageView
                 android:layout_marginTop="5dp"
                 android:id="@+id/ability_star_1"
@@ -357,6 +450,12 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/ability_score"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
             <ImageView
                 android:layout_marginTop="2dp"
                 android:id="@+id/ability_smill"
@@ -365,133 +464,71 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/smill"/>
 
-    </LinearLayout>
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
+        </LinearLayout>
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
         <TextView
             android:textSize="16dp"
             android:background="#7D9EC0"
             android:text="详 细 评 论"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    <TextView
-        android:text="评论"
-        android:id="@+id/comment_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" /><!--评价内容显示   -->
-    <TextView
-        android:layout_marginTop="20dp"
-        android:text="评论时间："
-        android:layout_marginLeft="150dp"
-        android:id="@+id/comment_commentIssueDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
-        <TextView
-            android:textSize="16dp"
-            android:background="#7D9EC0"
-            android:text="课 程 详 细 信 息"
+        <EditText
+            android:background="#CAE1FF"
+            android:id="@+id/comment_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
+            android:layout_height="100dp" /><!--评价内容显示   -->
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="评论时间："
+            android:layout_marginLeft="150dp"
+            android:id="@+id/comment_commentIssueDate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    <LinearLayout
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_gravity="left"
+                android:background="#6E8B3D"
+                android:id="@+id/update_comment"
+                android:text="修改评论"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp" />
+            <Button
+                android:layout_marginLeft="190dp"
+                android:background="#6E8B3D"
+                android:layout_gravity="right"
+                android:id="@+id/delete_comment"
+                android:text="删除评论"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp" />
+        </LinearLayout><!--修改删除按钮   -->
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#CCCCCC" />
         <TextView
-            android:textAlignment="center"
-            android:text="课程名称："
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/comment_infoIssueDate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/comment_subjectName"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:text="年级："
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/comment_grade"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    </LinearLayout>
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textAlignment="center"
-            android:text="开始时间："
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/comment_startDate"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textAlignment="center"
-            android:text="结束时间："
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/comment_endDate"
-            android:textAlignment="center"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <View
-        android:layout_marginTop="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#CCCCCC" />
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:id="@+id/comment_infoIssueDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="20dp"
-        android:background="#7D9EC0"
-        android:layout_marginTop="20dp"
-        android:id="@+id/comment_commentedUserName"
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
+            android:textSize="20dp"
+            android:background="#7D9EC0"
+            android:layout_marginTop="20dp"
+            android:id="@+id/comment_commentedUserName"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
     </LinearLayout>
 </ScrollView>
